@@ -8,7 +8,7 @@ GymPass style app.
 - [x] Deve ser possível se cadastrar;
 - [x] Deve ser possível se autenticar;
 - [x] Deve ser possível obter o perfil de um usuário logado;
-- [] Deve ser possível obter o número de check-ins realizado pelo usuário logado;
+- [x] Deve ser possível obter o número de check-ins realizado pelo usuário logado;
 - [x] Deve se possível o usuário obter o histórico de check-ins;
 - [] Deve ser possível o usuário buscar academias próximas;
 - [] Deve ser possível o usuário buscar academias pelo nome;
@@ -25,6 +25,7 @@ GymPass style app.
 - [x] O usuário não pode fazer check-in se nao estiver perto (100m) da academia;
 - [] O check-in so pode ser validado até 20 minutos após criado;
 - [] O check-in so pode ser validado por administradores; 
+- [] A academia so pode ser cadastradas por administradores;
 
 ## RNs (Requisitos não funcionais)
 
