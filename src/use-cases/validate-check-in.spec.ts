@@ -1,12 +1,12 @@
-import { beforeEach, afterEach, expect, it, describe, vi } from 'vitest'
 import { InMemoryCheckInsRepository } from '@/repositories/in-memory/in-memory-check-ins-repository.js'
+import { ResourceNotFoundError } from '@/use-cases/errors/resource-not-found-error.js'
+import { expect, describe, it, beforeEach, afterEach, vi } from 'vitest'
 import { ValidateCheckInUseCase } from './validate-check-in.js'
-import { ResourceNotFoundError } from './errors/resource-not-found-error.js'
 
 let checkInsRepository: InMemoryCheckInsRepository
 let sut: ValidateCheckInUseCase
 
-describe('Validate check-in use case', () => {
+describe('Validate Check-in Use Case', () => {
   beforeEach(async () => {
     checkInsRepository = new InMemoryCheckInsRepository()
     sut = new ValidateCheckInUseCase(checkInsRepository)
@@ -29,10 +29,10 @@ describe('Validate check-in use case', () => {
     })
 
     expect(checkIn.validated_at).toEqual(expect.any(Date))
-    expect(checkInsRepository.items[0].validated_at).toEqual(expect.any(Date))
+    expect(checkInsRepository.items[0]!.validated_at).toEqual(expect.any(Date))
   })
 
-  it('should be able to validate an inexistent check-in', async () => {
+  it('should not be able to validate an inexistent check-in', async () => {
     await expect(() =>
       sut.execute({
         checkInId: 'inexistent-check-in-id',
@@ -40,7 +40,7 @@ describe('Validate check-in use case', () => {
     ).rejects.toBeInstanceOf(ResourceNotFoundError)
   })
 
-  it('should be able to validate the check-in after 20 minutes of its creation', async () => {
+  it('should not be able to validate the check-in after 20 minutes of its creation', async () => {
     vi.setSystemTime(new Date(2023, 0, 1, 13, 40))
 
     const createdCheckIn = await checkInsRepository.create({

@@ -3,7 +3,7 @@ import { app } from '@/app.js'
 import request from 'supertest'
 import { createAndAuthenticateUSer } from '@/utils/test/create-and-authenticate-user.js'
 
-describe('gyms (e2e)', () => {
+describe('Create Gyms (e2e)', () => {
   beforeAll(async () => {
     await app.ready()
   })
@@ -13,7 +13,7 @@ describe('gyms (e2e)', () => {
   })
 
   it('should be able to create gym', async () => {
-    const { token } = await createAndAuthenticateUSer(app)
+    const { token } = await createAndAuthenticateUSer(app, true)
 
     const response = await request(app.server)
       .post('/gyms')
