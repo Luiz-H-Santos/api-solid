@@ -108,7 +108,7 @@ Client → Fastify API → Use Cases → Prisma ORM → PostgreSQL
 ## Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
+https://github.com/Luiz-H-Santos/api-solid.git
 ```
 
 ---
@@ -116,7 +116,7 @@ git clone https://github.com/seu-usuario/seu-repositorio.git
 ## Acesse a pasta
 
 ```bash
-cd nome-do-projeto
+api-solid
 ```
 
 ---
