@@ -27,7 +27,7 @@ export default <Environment> {
 
     process.env.DATABASE_URL = databaseUrl
 
-    execSync('npx prisma migrate deploy --skip-generate')
+    execSync('npx prisma migrate deploy')
 
     return {
       async teardown( ) {
