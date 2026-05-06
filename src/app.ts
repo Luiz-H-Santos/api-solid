@@ -10,7 +10,7 @@ import { checkInRoutes } from './http/controllers/cherck-ins/routes.js'
 export const app = fastify()
 
 app.register(fastifyJwt, {
-  secret: env.JWT_SECRETE,
+  secret: env.JWT_SECRET,
 
   cookie: {
     cookieName: 'refreshToken',
