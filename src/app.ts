@@ -5,12 +5,12 @@ import { ZodError } from 'zod'
 import { env } from './env/index.js'
 import { usersRoutes } from './http/controllers/users/routes.js'
 import { gymsRoutes } from './http/controllers/gyms/routes.js'
-import { checkInRoutes } from './http/controllers/cherck-ins/routes.js'
+import { checkInRoutes } from './http/controllers/check-ins/routes.js'
 
 export const app = fastify()
 
 app.register(fastifyJwt, {
-  secret: env.JWT_SECRETE,
+  secret: env.JWT_SECRET,
 
   cookie: {
     cookieName: 'refreshToken',
